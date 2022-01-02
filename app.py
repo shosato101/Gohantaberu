@@ -10,6 +10,8 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+# import google_search
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('VesLcVYuxdpH+o/mcgIybSjqFA5IhxOXlloAT2MQXT2NEKCWV8LZ8i0ZDk37/N1pL0RD4nXvGtbFnX2vGkb4O2Kgk7AAOZDLyeqwowgZrNd7rFSUAABkBVx7L0eh6zWIj5HOpi7Br2HBLU4xI6iefAdB04t89/1O/w1cDnyilFU=')
