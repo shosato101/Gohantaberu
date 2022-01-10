@@ -10,11 +10,13 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+from config import LINE_BOT_API_KEY
+
 # import google_search
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('VesLcVYuxdpH+o/mcgIybSjqFA5IhxOXlloAT2MQXT2NEKCWV8LZ8i0ZDk37/N1pL0RD4nXvGtbFnX2vGkb4O2Kgk7AAOZDLyeqwowgZrNd7rFSUAABkBVx7L0eh6zWIj5HOpi7Br2HBLU4xI6iefAdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(config.LINE_BOT_API_KEY)
 handler = WebhookHandler('929e793e95704e31010b645aa0d3e31c')
 
 @app.route("/callback", methods=['POST'])
