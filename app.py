@@ -10,13 +10,11 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-from config import LINE_BOT_API_KEY
-
-# import google_search
+import pickup
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi(config.LINE_BOT_API_KEY)
+line_bot_api = LineBotApi('VesLcVYuxdpH+o/mcgIybSjqFA5IhxOXlloAT2MQXT2NEKCWV8LZ8i0ZDk37/N1pL0RD4nXvGtbFnX2vGkb4O2Kgk7AAOZDLyeqwowgZrNd7rFSUAABkBVx7L0eh6zWIj5HOpi7Br2HBLU4xI6iefAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('929e793e95704e31010b645aa0d3e31c')
 
 @app.route("/callback", methods=['POST'])
@@ -38,11 +36,16 @@ def callback():
     return 'OK'
 
 
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    # 全角スペースを半角にするため
+    keyword = event.message.text.replace("　", " ")
+    reccomend = pickup(keyword)
+
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text=reccomend))
 
 
 if __name__ == "__main__":

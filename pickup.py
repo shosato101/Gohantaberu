@@ -7,11 +7,11 @@ import config
 api_key = config.HOTPEPPER_API_KEY
 restaurant_datas=[]
 
-def pickup_datas():
+def pickup_datas(keyword):
     query = {
         'key': api_key,
         'large_area': 'Z094', # 熊本
-        'keyword': '熊本',
+        'keyword': keyword,
         'genre': 'G013', # ラーメン屋
         'order': 1, #名前の順
         'start': 1, #検索結果の何番目から出力するか
@@ -31,5 +31,5 @@ def pickup_datas():
         print(f"全部で{len(restaurant_datas)}店あります")
 
 
-pickup_datas = pickup_datas()
-print(pickup_datas)
+if __name__ == "__main__":
+    pickup_datas()
