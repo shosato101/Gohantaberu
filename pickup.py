@@ -33,4 +33,4 @@ def pickup_datas(keyword):
 
 
 if __name__ == "__main__":
-    pickup_datas("熊本 ラーメン")
+    pickup_datas()
