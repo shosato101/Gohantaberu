@@ -28,9 +28,9 @@ def pickup_datas(keyword):
         for restaurant in result:
             restaurant_datas.append([restaurant['name'], restaurant['open'], restaurant['urls']])
         pickup = restaurant_datas[np.random.randint(0, len(restaurant_datas))]
-        print(pickup)
+        print(f"{pickup}")
         print(f"全部で{len(restaurant_datas)}店あります")
 
 
 if __name__ == "__main__":
-    pickup_datas()
+    pickup_datas("熊本")
