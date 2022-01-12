@@ -12,7 +12,8 @@ def pickup_datas(keyword):
         'key': api_key,
         'large_area': 'Z094', # 熊本
         'keyword': keyword,
-        'genre': 'G013', # ラーメン屋
+#        'genre': 'G013', # ラーメン屋
+#        'lunch': 1, #ランチありのみ
         'order': 1, #名前の順
         'start': 1, #検索結果の何番目から出力するか
         'count': 100, #最大得件数
@@ -32,4 +33,4 @@ def pickup_datas(keyword):
 
 
 if __name__ == "__main__":
-    pickup_datas()
+    pickup_datas("熊本 ラーメン")
