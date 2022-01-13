@@ -41,8 +41,8 @@ def callback():
 def handle_message(event):
     # 全角スペースを半角にするため
 #    keyword = event.message.text
-    reccomend = []
-    hit = 0
+    # reccomend = []
+    # hit = 0
 
     reccomend, hit = pickup.pickup_datas(event.message.text)
 
@@ -50,10 +50,9 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=f"{reccomend}"))
 
-    if hit != 0:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=f"{hit}件ありました"))
+    # line_bot_api.reply_message(
+        # event.reply_token,
+        # TextSendMessage(text=f"全{hit}件"))
 
 if __name__ == "__main__":
         app.run()
