@@ -50,9 +50,10 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=f"{reccomend}"))
 
-    # line_bot_api.reply_message(
-        # event.reply_token,
-        # TextSendMessage(text=f"全{hit}件"))
+    if hit != 0:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=f"{hit}件ありました"))
 
 if __name__ == "__main__":
         app.run()
