@@ -6,6 +6,8 @@ import config
 
 api_key = config.HOTPEPPER_API_KEY
 restaurant_datas=[]
+reccomend = []
+hit = 0
 
 def pickup_datas(keyword):
     query = {
@@ -27,10 +29,12 @@ def pickup_datas(keyword):
     else:
         for restaurant in result:
             restaurant_datas.append([restaurant['name'], restaurant['open'], restaurant['urls']])
-        pickup = restaurant_datas[np.random.randint(0, len(restaurant_datas))]
-        print(f"{pickup}")
-        print(f"全部で{len(restaurant_datas)}店あります")
+            reccomend = restaurant_datas[np.random.randint(0, len(restaurant_datas))]
+            hit = len(restaurant_datas)
+        return reccomend, hit
 
 
-if __name__ == "__main__":
-    pickup_datas("熊本")
+# if __name__ == "__main__":
+    # reccomend, hit = pickup_datas("熊本")
+    # print(reccomend)
+    # print(f"全{hit}店中")
