@@ -10,12 +10,17 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+
 import pickup
+import config
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('VesLcVYuxdpH+o/mcgIybSjqFA5IhxOXlloAT2MQXT2NEKCWV8LZ8i0ZDk37/N1pL0RD4nXvGtbFnX2vGkb4O2Kgk7AAOZDLyeqwowgZrNd7rFSUAABkBVx7L0eh6zWIj5HOpi7Br2HBLU4xI6iefAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('929e793e95704e31010b645aa0d3e31c')
+LINE_BOT_API_KEY = config.LINE_BOT_API_KEY
+LINE_WEBHOOK_HANDLER = config.LINE_WEBHOOK_HANDLER
+
+line_bot_api = LineBotApi(LINE_BOT_API_KEY)
+handler = WebhookHandler(LINE_WEBHOOK_HANDLER)
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -40,15 +45,13 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     # 全角スペースを半角にするため
-#    keyword = event.message.text
-    # reccomend = []
-    # hit = 0
+    keyword = event.message.text.replace("　", " ")
 
-    reccomend, hit = pickup.pickup_datas(event.message.text)
+    reccomend = pickup.Reccomend(keyword)
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=f"{reccomend}"))
+        TextSendMessage(text=reccomend))
 
     # line_bot_api.reply_message(
         # event.reply_token,
