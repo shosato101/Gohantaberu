@@ -33,9 +33,11 @@ class Reccomend(object):
         if len(result) == 0:
             reccomend = "ありません"
             return reccomend
+            
         else:
             for restaurant in result:
                 self.restaurant_datas.append(restaurant['urls'])
+
             self.suggest = self.restaurant_datas[np.random.randint(0, len(self.restaurant_datas))]
             self.hit = len(self.restaurant_datas)
             reccomend = f"{self.suggest}\n全{self.hit}件中"
