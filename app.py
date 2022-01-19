@@ -45,9 +45,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     # 全角スペースを半角にするため
-    # keyword = event.message.text.replace("　", " ")
+    word = event.message.text
+    keywords = word.replace("　", " ")
 
-    reccomend = pickup.Reccomend(keyword=event.message.text)
+    recommendation = pickup.Reccomend(keywords)
+    reccomend = recommendation.pickup_datas()
 
     line_bot_api.reply_message(
         event.reply_token,

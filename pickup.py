@@ -6,7 +6,7 @@ import config
 
 api_key = config.HOTPEPPER_API_KEY
 class Reccomend(object):
-    
+
     def __init__(self, keyword):
         self.keyword = keyword
         self.restaurant_datas = []
@@ -33,17 +33,12 @@ class Reccomend(object):
         if len(result) == 0:
             reccomend = "ありません"
             return reccomend
-            
+
         else:
             for restaurant in result:
-                self.restaurant_datas.append(restaurant['urls'])
+                self.restaurant_datas.append([restaurant['urls']])
 
             self.suggest = self.restaurant_datas[np.random.randint(0, len(self.restaurant_datas))]
             self.hit = len(self.restaurant_datas)
             reccomend = f"{self.suggest}\n全{self.hit}件中"
             return reccomend
-
-
-    if __name__ == "__main__":
-        pickup_datas()
-
