@@ -17,7 +17,7 @@ class Reccomend(object):
     
         query = {
             'key': api_key,
-            # 'large_area': 'Z094', # 熊本
+            'large_area': 'Z094', # 熊本
             'keyword': self.keyword,
             #  'genre': 'G001', # 居酒屋
             # 'lunch': 1, #ランチありのみ
@@ -36,7 +36,7 @@ class Reccomend(object):
 
         else:
             for restaurant in result:
-                self.restaurant_datas.append([restaurant['urls']])
+                self.restaurant_datas.append([restaurant['name'], restaurant['address'], restaurant['open'], restaurant['urls']])
 
             self.suggest = self.restaurant_datas[np.random.randint(0, len(self.restaurant_datas))]
             self.hit = len(self.restaurant_datas)
