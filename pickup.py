@@ -40,5 +40,5 @@ class Reccomend(object):
 
             self.suggest = self.restaurant_datas[np.random.randint(0, len(self.restaurant_datas))]
             self.hit = len(self.restaurant_datas)
-            reccomend = f"{self.suggest}\n全{self.hit}件中\n"<a href="http://webservice.recruit.co.jp/"><img src="http://webservice.recruit.co.jp/banner/hotpepper-s.gif" alt="ホットペッパー Webサービス" width="135" height="17" border="0" title="ホットペッパー Webサービス"></a>
+            reccomend = f"{self.suggest}\n全{self.hit}件中"
             return reccomend
