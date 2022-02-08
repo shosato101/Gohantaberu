@@ -10,7 +10,6 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-
 import pickup
 import config
 
@@ -18,7 +17,6 @@ app = Flask(__name__)
 
 LINE_BOT_API_KEY = config.LINE_BOT_API_KEY
 LINE_WEBHOOK_HANDLER = config.LINE_WEBHOOK_HANDLER
-
 line_bot_api = LineBotApi(LINE_BOT_API_KEY)
 handler = WebhookHandler(LINE_WEBHOOK_HANDLER)
 
