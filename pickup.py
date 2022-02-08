@@ -17,10 +17,11 @@ class Reccomend(object):
 
         query = {
             'key': api_key,
-            # 'large_area': 'Z094', # 熊本
-            'address': self.keyword,
+            'large_area': 'Z094', # 熊本
+            # 'address': self.keyword,
             # 'genre': 'G014', # 居酒屋
-            'lunch': 1, #ランチありのみ
+            'keyword': self.keyword,
+            # 'lunch': 1, #ランチありのみ
             'order': 1, #名前の順
             'start': 1, #検索結果の何番目から出力するか
             'count': 100, #最大得件数
