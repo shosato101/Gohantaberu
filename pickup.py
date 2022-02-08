@@ -5,7 +5,6 @@ import numpy as np
 import config
 
 api_key = config.HOTPEPPER_API_KEY
-
 class Reccomend(object):
 
     def __init__(self, keyword):
@@ -15,13 +14,13 @@ class Reccomend(object):
         self.hit = 0
 
     def pickup_datas(self):
-    
+
         query = {
             'key': api_key,
             # 'large_area': 'Z094', # 熊本
-            'address': self.keyword, 
-            'genre': 'G014', # 居酒屋
-            # 'lunch': 1, #ランチありのみ
+            'address': self.keyword,
+            # 'genre': 'G014', # 居酒屋
+            'lunch': 1, #ランチありのみ
             'order': 1, #名前の順
             'start': 1, #検索結果の何番目から出力するか
             'count': 100, #最大得件数
