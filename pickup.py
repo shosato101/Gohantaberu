@@ -21,11 +21,7 @@ class Reccomend(object):
             # 'large_area': 'Z094', # 熊本
             'address': self.keyword, 
             'genre': 'G014', # 居酒屋
-<<<<<<< HEAD
             # 'lunch': 1, #ランチありのみ
-=======
-            'lunch': 1, #ランチありのみ
->>>>>>> 0c104b4ab70ffe32cba5a05276260939cb476ef7
             'order': 1, #名前の順
             'start': 1, #検索結果の何番目から出力するか
             'count': 100, #最大得件数
