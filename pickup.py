@@ -48,6 +48,6 @@ class Reccomend(object):
             reccomend = f"[ {restaurant_name} ]\n"\
                         f"【住所】{restaurant_address}\n"\
                         f"【営業時間】{restaurant_open}\n"\
-                        f"{restaurant_urls}\n\n"
+                        f"{restaurant_urls}\n\n"\
                         f"全{self.hit}件中"
             return reccomend
