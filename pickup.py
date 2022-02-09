@@ -41,9 +41,9 @@ class Reccomend(object):
 
             self.suggest = self.restaurant_datas[np.random.randint(0, len(self.restaurant_datas))]
             restaurant_name = self.suggest[0]
-            # restaurant_address = self.suggest[1]
-            # restaurant_open = self.suggest[2]
-            # restaurant_urls = self.suggest[3]["pc"]
+            restaurant_address = self.suggest[1]
+            restaurant_open = self.suggest[2]
+            restaurant_urls = self.suggest[3]["pc"]
             self.hit = len(self.restaurant_datas)
-            reccomend = f"{restaurant_name}\n全{self.hit}件中"
+            reccomend = f"『{restaurant_name}』\n・{restaurant_address}】\n【{restaurant_open}】\n{restaurant_urls}\n\n全{self.hit}件中"
             return reccomend
