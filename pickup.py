@@ -45,5 +45,5 @@ class Reccomend(object):
             restaurant_open = self.suggest[2]
             restaurant_urls = self.suggest[3]["pc"]
             self.hit = len(self.restaurant_datas)
-            reccomend = f"『{restaurant_name}』\n・{restaurant_address}】\n【{restaurant_open}】\n{restaurant_urls}\n\n全{self.hit}件中"
+            reccomend = f"【{restaurant_name}】\n\n{restaurant_address}\n\n［{restaurant_open}］)\n\n{restaurant_urls}\n\n\n全{self.hit}件中"
             return reccomend
